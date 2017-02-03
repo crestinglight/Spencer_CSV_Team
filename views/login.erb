@@ -1,0 +1,30 @@
+<% if $loggedIn == true
+	redirect "/admin"
+end %>
+
+<form action="/login" method="post">
+	<label>Please enter your user ID:</label>
+	<p><input type="text" name="userID"></p>
+
+	<label>Please enter your password:</label>
+	<p><input type="password" name="password"></p>
+
+	<input type="submit">
+</form>
+
+<%
+
+if @name == nil%>
+	<p> </p>
+<%
+
+elsif @name != "bossman" %>
+	<p> Try again. </p>
+<%
+
+elsif @name == "bossman"
+	@loggedIn = true
+	redirect "/admin"
+
+end
+%>
