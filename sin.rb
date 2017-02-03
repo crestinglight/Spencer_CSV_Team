@@ -64,10 +64,16 @@ post("/logout"){
 }
 
 get("/admin"){
+	@passHash = buildItAndTheyWillCome.delete(@name)
 	erb :admin
 }
 
 post("/admin"){
+	@newStuff = params.values
+	@cleanNewStuff = stripNewRow(@newStuff)
+	addRow(@cleanNewStuff)
+	
+	redirect("/admin")
 	erb :admin
 }
 
