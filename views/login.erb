@@ -1,31 +1,46 @@
-<link rel="stylesheet" href="styles.css">
-<% if $loggedIn == true
-	redirect "/admin"
-end %>
+<!DOCTYPE html>
+<html lang="en-us">
 
-<form action="/login" method="post">
-	<label>Please enter your user ID:</label>
-	<p><input type="text" name="userID"></p>
+    <head>
+	    <meta charset="utf-8">
+	    <title>CSV Report Home</title>
+	    <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+    	<div class="wrapper">
+			<% if $loggedIn == true
+				redirect "/admin"
+			end %>
 
-	<label>Please enter your password:</label>
-	<p><input type="password" name="password"></p>
+			<h1>Please log in</h1>
 
-	<input type="submit">
-</form>
+			<form class="loginForm" action="/login" method="post">
+				<label>Please enter your user ID:</label>
+				<p><input type="text" name="userID" placeholder="Username"></p>
 
-<%
+				<label>Please enter your password:</label>
+				<p><input type="password" name="password" placeholder="Password"></p>
 
-if @name == nil%>
-	<p> </p>
-<%
+				<input type="submit">
+			</form>
 
-elsif @name != "bossman" %>
-	<p> Try again. </p>
-<%
+			<%
 
-elsif @name == "bossman"
-	@loggedIn = true
-	redirect "/admin"
+			if @name == nil%>
+				<p> </p>
+			<%
 
-end
-%>
+			elsif @name != "bossman" %>
+				<p> Try again. </p>
+			<%
+
+			elsif @name == "bossman"
+				@loggedIn = true
+				redirect "/admin"
+
+			end
+			%>
+		</div>
+	</body>
+</html>

@@ -1,53 +1,65 @@
-<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="en-us">
 
-<style>
-	td{
-		padding-left: 10;
-		padding-right: 10;
-	}
-</style>
+    <head>
+	    <meta charset="utf-8">
+	    <title>CSV Report Home</title>
+	    <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+    	<div id="wrapper">
+			<style>
+				td{
+					padding-left: 10;
+					padding-right: 10;
+				}
+			</style>
 
-<p>Enter an account</p>
+			<p>Enter an account</p>
 
-<form>
-	<input type = "text" name = "whoWeWant">
-	<input type = "submit">
-</form><br>
-
-
-<form action="/login" method="get">
-	<label>Please enter your user ID:</label>
-	<p><input type="text" name="userID"></p>
-
-	<label>Please enter your password:</label>
-	<p><input type="password" name="password"></p>
-
-	<input type="submit">
-</form>
+			<form>
+				<input type = "text" name = "whoWeWant">
+				<input type = "submit">
+			</form><br>
 
 
+			<form action="/login" method="get">
+				<label>Please enter your user ID:</label>
+				<p><input type="text" name="userID"></p>
 
-<a href="/fullreport">Both</a>
-<a href="/fullreport?whoWeWant=Priya">Priya only</a>
-<a href="/fullreport?whoWeWant=Sonia">Sonia only</a>
+				<label>Please enter your password:</label>
+				<p><input type="password" name="password"></p>
 
-<br>
+				<input type="submit">
+			</form>
 
-<% @passHash.each do |name, balance| %>
-	<table border = "1">
-		<tr>Account:<%= name %> &emsp; Balance: $<%= balance[:total].round(2) %></tr>
-		<tr>
-			<td>Category</td>
-			<td>Amount</td>
-			<td>Average per transaction</td>
-		</tr>
-	<% balance[:category].each do |category, t| %>
-		<tr>
-			<td><%= category %></td>	
-			<td><%= t[:tally].round(2) %></td>
-			<td><%= t[:avg_transaction].round(2) %></td>
-		</tr>
-	<% end %>
-	</table>
-	<br>
-<% end %>
+
+
+			<a href="/fullreport">Both</a>
+			<a href="/fullreport?whoWeWant=Priya">Priya only</a>
+			<a href="/fullreport?whoWeWant=Sonia">Sonia only</a>
+
+			<br>
+
+			<% @passHash.each do |name, balance| %>
+				<table border = "1">
+					<tr>Account:<%= name %> &emsp; Balance: $<%= balance[:total].round(2) %></tr>
+					<tr>
+						<td>Category</td>
+						<td>Amount</td>
+						<td>Average per transaction</td>
+					</tr>
+				<% balance[:category].each do |category, t| %>
+					<tr>
+						<td><%= category %></td>	
+						<td><%= t[:tally].round(2) %></td>
+						<td><%= t[:avg_transaction].round(2) %></td>
+					</tr>
+				<% end %>
+				</table>
+				<br>
+			<% end %>
+		</div>
+	</body>
+</html>
