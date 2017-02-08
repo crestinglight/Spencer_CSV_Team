@@ -9,22 +9,20 @@
     <body>
     	<div id="wrapper">
 
-			<p>Enter an account</p>
+			<form class="searchForm">
+				<label>Enter an account</label>
+				<p><input type = "text" name = "whoWeWant"></p>
+				<p><input type = "submit"></p>
+			</form><br><br>
 
-			<form>
-				<input type = "text" name = "whoWeWant">
-				<input type = "submit">
-			</form><br>
-
-
-			<form action="/login" method="get">
+			<form action="/login" method="get" class="homeLoginForm">
 				<label>Please enter your user ID:</label>
 				<p><input type="text" name="userID"></p>
 
 				<label>Please enter your password:</label>
 				<p><input type="password" name="password"></p>
 
-				<input type="submit">
+				<input type="submit" class="submitButton">
 			</form>
 
 

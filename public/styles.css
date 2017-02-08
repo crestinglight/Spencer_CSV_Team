@@ -1,16 +1,8 @@
-html {
-	height:0;
-	margin:0;
-	padding:0;
-	border-style: none;
-	border-width:0;
-}
-
-body {
+html, body {
 	background-color: #EFECCA;
-	height: 100%
-	margin:0;
-	padding:0;
+	height: 100%;
+	margin-top: -300px;
+	padding-top: 300px;
 	border-width: 0px;
 	border-style: none;
 }
@@ -20,11 +12,12 @@ body {
 	min-height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top:0;
-	margin-bottom:0;
-	padding-top:0;
+	margin-top: -3000px;
 	background-color: #F7F3E1;
-	padding:0;
+	padding-top: 3000px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
 	border-width: 0px;
 	border-style: none;
 }
@@ -79,6 +72,23 @@ ul {
 	margin-left: auto;
 	padding-top: 10px;
     text-align: center;
+}
+
+.submitButton {
+	margin-bottom: 40px;
+}
+
+.homeLoginForm {
+	padding: 0px;
+	display: block;
+	float: right;
+	margin-top: -15px;
+}
+
+.searchForm {
+	display: block;
+	float: left;
+	padding-top: 20px;
 }
 
 
