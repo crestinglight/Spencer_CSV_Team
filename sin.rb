@@ -46,7 +46,7 @@ post("/login"){
 	@password = params["password"]
 	$loggedIn = false
 
-	if @name == "bossman"
+	if (@name == "bossman" && @password == "PeanutButterCookie")
 		$loggedIn = true
 
 		redirect "/admin"

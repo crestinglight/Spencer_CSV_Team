@@ -1,5 +1,5 @@
 html, body {
-	background-color: #EFECCA;
+	background-color: #E6E2AF;
 	height: 100%;
 	margin-top: -300px;
 	padding-top: 300px;
@@ -13,13 +13,14 @@ html, body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: -3000px;
-	background-color: #F7F3E1;
+	background-color: #FFFCEE;
 	padding-top: 3000px;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 10px;
 	border-width: 0px;
 	border-style: none;
+	box-shadow: 0px 20px 30px #A58B3F;
 }
 
 h1 {
@@ -66,6 +67,72 @@ ul {
 	padding: 0px 0px 0px 10px;
 }
 
+table, th, td {
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 0.97em;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	padding-left: 5px;
+	padding-right: 15px;
+	padding-bottom: 2px;
+}
+
+th {
+	background-color: #003636;
+	color: #FFFCEE;
+	font-weight: normal;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+tr:nth-child(even) {
+	background-color: #E8F2FF;
+}
+
+tr:hover {
+	background-color: #fff;
+}
+
+h4 {
+	color: #003636;
+	font-family: sans-serif;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	line-height: 0px;
+}
+
+.header {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: sans-serif;
+	margin-top: -25px;
+	background-color: #003636;
+	height: 40px;
+	margin-right: -20px;
+	margin-left: -20px;
+}
+
+.header h3 {
+	line-height: 45px;
+	color: #FFFCEE;
+	font-weight: normal;
+	font-size: 0.95em;
+}
+
+.adminBars {
+	color: #003636;
+}
+
 .loginForm {
 	display: block;
 	margin-right: auto;
@@ -76,6 +143,10 @@ ul {
 
 .submitButton {
 	margin-bottom: 40px;
+}
+
+.adminBox {
+	width: 120px;
 }
 
 .homeLoginForm {
@@ -91,9 +162,18 @@ ul {
 	padding-top: 20px;
 }
 
+.loggedInNotification {
+	font-size: 0.7em;
+}
 
+.reportLinks {
+	padding-top: 100px;
+	line-height: 0px;
+}
 
-
+.reportTable {
+	
+}
 
 
 

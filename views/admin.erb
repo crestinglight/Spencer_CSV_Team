@@ -5,45 +5,62 @@ if $loggedIn == false || $loggedIn == nil
 
 else %>
 
-<p>You are currently logged in. Click <a href="/logout">here</a> to log out.</p>
+<head>
+    <meta charset="utf-8">
+    <title>CSV Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-<h2>Please add your new line to the report:</h2>
+<body>
+	
+	<div id="wrapper">
+		<div class="header">
+			<h3>CSV Stop</h3>
+		</div>
+	
+		<p class="loggedInNotification">You are currently logged in. Click <a href="/logout">here</a> to log out.</p>
 
-<form action="/admin" method="post">
+		<h2>Please add your new line to the report:</h2>
 
-	<p><input type = "text" name = "Account" placeholder = "Account Name"></p>
+		<form action="/admin" method="post">
 
-	<p><input type = "text" name = "Date" placeholder = "Date"></p>
+			<p class="adminBars"><input type="text" name="Account" placeholder="Account Name" class="adminBox"> | 
 
-	<p><input type = "text" name = "Payee" placeholder = "Payee"></p>
+			<input type="text" name="Date" placeholder="Date" class="adminBox"> | 
 
-	<p><input type = "text" name = "Category" placeholder = "Category"></p>
+			<input type="text" name="Payee" placeholder="Payee" class="adminBox"> | 
 
-	<p><input type = "text" name = "Outflow" placeholder = "Outflow"></p>
+			<input type="text" name="Category" placeholder="Category" class="adminBox"> | 
 
-	<p><input type = "text" name = "Inflow" placeholder = "Inflow"></p>
+			<input type="text" name="Outflow" placeholder="Outflow" class="adminBox"> | 
 
-	<input type = "submit">
+			<input type="text" name="Inflow" placeholder="Inflow" class="adminBox"></p>
 
-</form>
+			<input type="submit">
 
-<% @passHash.each do |name, balance| %>
-	<table border = "1">
-		<tr>Account:<%= name %> &emsp; Balance: $<%= balance[:total].round(2) %></tr>
-		<tr>
-			<td>Category</td>
-			<td>Amount</td>
-			<td>Average per transaction</td>
-		</tr>
-	<% balance[:category].each do |category, t| %>
-		<tr>
-			<td><%= category %></td>	
-			<td><%= t[:tally].round(2) %></td>
-			<td><%= t[:avg_transaction].round(2) %></td>
-		</tr>
-	<% end %>
-	</table>
-	<br>
-<% end %>
+		</form>
 
-<% end %>
+		<% @passHash.each do |name, balance| %>
+
+			<h4>Account:  <%= name %> &emsp; Balance: $<%= balance[:total].round(2) %></h4>
+
+			<table>
+				<tr>
+					<th>Category</th>
+					<th>Amount</th>
+					<th>Average per transaction</th>
+				</tr>
+				<% balance[:category].each do |category, t| %>
+				<tr>
+					<td><%= category %></td>	
+					<td><%= t[:tally].round(2) %></td>
+					<td><%= t[:avg_transaction].round(2) %></td>
+				</tr>
+			<% end %>
+			</table>
+			<br>
+		<% end %>
+
+		<% end %>
+	</div>
+</body>
